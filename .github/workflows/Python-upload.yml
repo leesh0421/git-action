@@ -19,4 +19,7 @@ jobs:
       - name: Save Python version as txt file
         run: python -c "import sys; print(sys.version)" > Python_${{matrix.python-version}}.txt
 			- uses: actions/upload-artifacts@v5
+                          with:
+                            name: my-artifact
+                            path: Python_${{ matrix.python-version }}.txt
 
